@@ -2,6 +2,9 @@ import telebot
 from telebot.types import Message
 import re
 import time
+import threading
+import random
+import schedule
 
 BOT_TOKEN = '6735522008:AAGdECJSZkelv5wKzd6qEF5jIb33E_Mdt3g'
 CANAL_USERNAME = 'SharClub702'  # Remplacez par le nom d'utilisateur du canal
@@ -45,6 +48,9 @@ def start(message: Message):
     else:
         # En cas de commande mal formée
         bot.send_message(chat_id, "Commande mal formée. Utilisez /start avec le format : /start=identifiant_message")
+
+# Démarrer la tâche périodique dans un thread en arrière-plan
+threading.Thread(target=run_periodic_tasks, daemon=True).start()
 
 # Exécutez le bot
 if __name__ == '__main__':
