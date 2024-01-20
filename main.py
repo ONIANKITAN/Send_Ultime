@@ -23,7 +23,7 @@ def start(message: Message):
         message_id = int(match.group(1))
 
         # Envoyer 10 documents en utilisant les liens extraits
-        for i in range(10):
+        for i in range(5000):
             # Construire le lien
             message_link = f"https://t.me/{CANAL_USERNAME}/{message_id + i}"
 
