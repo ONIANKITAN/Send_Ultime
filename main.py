@@ -49,6 +49,27 @@ def start(message: Message):
         # En cas de commande mal formée
         bot.send_message(chat_id, "Commande mal formée. Utilisez /start avec le format : /start=identifiant_message")
 
+
+def send_random_message():
+    random_messages = [
+        "Message aléatoire 1",
+        "Message aléatoire 2",
+        "Message aléatoire 3",
+        # Ajoutez autant de messages aléatoires que nécessaire
+    ]
+    
+    random_message = random.choice(random_messages)
+    bot.send_message(GROUPE_ALEA, random_message)
+
+# Planifie l'envoi du message aléatoire toutes les 4 minutes
+schedule.every(50).seconds.do(send_random_message)
+
+# Fonction pour exécuter périodiquement les tâches planifiées
+def run_periodic_tasks():
+    while True:
+        schedule.run_pending()
+        time.sleep(2)
+        
 # Démarrer la tâche périodique dans un thread en arrière-plan
 threading.Thread(target=run_periodic_tasks, daemon=True).start()
 
