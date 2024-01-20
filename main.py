@@ -5,7 +5,7 @@ import time
 
 BOT_TOKEN = '6735522008:AAGdECJSZkelv5wKzd6qEF5jIb33E_Mdt3g'
 CANAL_USERNAME = 'turbosearch'  # Remplacez par le nom d'utilisateur du canal
-CANAL_ID = -1002050969919
+CANAL_ID = -1002072366730
 
 # Créez une instance de bot
 bot = telebot.TeleBot(BOT_TOKEN)
