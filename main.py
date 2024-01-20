@@ -38,7 +38,7 @@ def start(message: Message):
                 if sent_message.sticker:
                     continue
                 else:
-                    time.sleep(5)
+                    time.sleep(50)
 
             except telebot.apihelper.ApiException:
                 continue
