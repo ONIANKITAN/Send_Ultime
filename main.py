@@ -4,7 +4,7 @@ import re
 import time
 
 BOT_TOKEN = '6735522008:AAGdECJSZkelv5wKzd6qEF5jIb33E_Mdt3g'
-CANAL_USERNAME = 'turbosearch'  # Remplacez par le nom d'utilisateur du canal
+CANAL_USERNAME = 'One_Pieces_Francais'  # Remplacez par le nom d'utilisateur du canal
 CANAL_ID = -1002072366730
 
 # Créez une instance de bot
@@ -23,7 +23,7 @@ def start(message: Message):
         message_id = int(match.group(1))
 
         # Envoyer 10 documents en utilisant les liens extraits
-        for i in range(5000):
+        for i in range(1700):
             # Construire le lien
             message_link = f"https://t.me/{CANAL_USERNAME}/{message_id + i}"
 
@@ -35,7 +35,7 @@ def start(message: Message):
                 sent_message = bot.send_document(CANAL_ID, message_link)
                
 
-                if sent_message.sticker:
+                if sent_message.sticker or sent_message.video:
                     continue
                 else:
                     time.sleep(50)
