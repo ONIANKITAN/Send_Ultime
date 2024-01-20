@@ -6,6 +6,8 @@ import threading
 import random
 import schedule
 
+from keep_alive import keep_alive
+
 BOT_TOKEN = '6735522008:AAGdECJSZkelv5wKzd6qEF5jIb33E_Mdt3g'
 CANAL_USERNAME = 'SharClub702'  # Remplacez par le nom d'utilisateur du canal
 CANAL_ID = -1002072366730
@@ -53,9 +55,9 @@ def start(message: Message):
 
 def send_random_message():
     random_messages = [
-        "Message aléatoire 1",
-        "Message aléatoire 2",
-        "Message aléatoire 3",
+        "#Message aléatoire 1",
+        "#Message aléatoire 2",
+        "#Message aléatoire 3",
         # Ajoutez autant de messages aléatoires que nécessaire
     ]
     
@@ -75,5 +77,6 @@ def run_periodic_tasks():
 threading.Thread(target=run_periodic_tasks, daemon=True).start()
 
 # Exécutez le bot
+keep_alive()
 if __name__ == '__main__':
     bot.polling()
