@@ -35,10 +35,10 @@ def start(message: Message):
                 sent_message = bot.send_document(CANAL_ID, message_link)
                
 
-                if sent_message.sticker or sent_message.video:
+                if sent_message.sticker:
                     continue
                 else:
-                    time.sleep(90)
+                    time.sleep(50)
 
             except telebot.apihelper.ApiException:
                 continue
