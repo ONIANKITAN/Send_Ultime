@@ -23,7 +23,7 @@ def start(message: Message):
         message_id = int(match.group(1))
 
         # Envoyer 10 documents en utilisant les liens extraits
-        for i in range(1700):
+        for i in range(650):
             # Construire le lien
             message_link = f"https://t.me/{CANAL_USERNAME}/{message_id + i}"
 
@@ -38,7 +38,7 @@ def start(message: Message):
                 if sent_message.sticker or sent_message.video:
                     continue
                 else:
-                    time.sleep(50)
+                    time.sleep(90)
 
             except telebot.apihelper.ApiException:
                 continue
